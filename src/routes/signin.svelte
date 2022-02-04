@@ -13,7 +13,7 @@
 			password: pass
 		});
 		if (error) alert(error.message);
-		goto('/todo');
+		else goto('/todo');
 	}
 	if (browser) {
 		$session = supabase.auth.session();

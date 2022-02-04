@@ -18,7 +18,7 @@
 			password: pass
 		});
 		if (error) alert(error.message);
-		else goto('/todo');
+		else goto('/confirm');
 	}
 	if (browser) {
 		$session = supabase.auth.session();
