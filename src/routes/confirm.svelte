@@ -1,1 +1,1 @@
-<p>confirm mail to continue</p>
+<p>confirm mail and signin to continue </p>
