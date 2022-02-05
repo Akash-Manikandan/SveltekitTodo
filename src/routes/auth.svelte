@@ -4,21 +4,29 @@
 	import { browser } from '$app/env';
 	import Header from '$lib/Header.svelte';
 	import { goto } from '$app/navigation';
-	const page ='auth';
+	const page = 'auth';
 	let mail;
 	let pass;
 	async function connect() {
 		//const session = supabase.auth.session()
 		const {
 			user,
-			session,
+			session: sesh,
 			error
-		} = await supabase.auth.signUp({
-			email: mail,
-			password: pass
-		});
+		} = await supabase.auth.signUp(
+			{
+				email: mail,
+				password: pass
+			},
+			{
+				redirectTo: 'https://sveltekit-todo.vercel.app/todo'
+			}
+		);
 		if (error) alert(error.message);
-		else goto('/confirm');
+		else {
+			$session = sesh;
+			goto('/confirm');
+		}
 	}
 	if (browser) {
 		$session = supabase.auth.session();
@@ -31,10 +39,13 @@
 
 <main>
 	<Header {page} />
-	<input type="email" bind:value={mail} />
-	<input type="password" bind:value={pass} />
+	<br />
+	Enter mail-id : 
+	<input type="email" bind:value={mail} /><br /><br />
+	Enter password : 
+	<input type="password" bind:value={pass} /><br /><br />
 	<button on:click={connect}>Submit</button>
-	<pre>{JSON.stringify($session, null, 2)}</pre>
+	<!--<pre>{JSON.stringify($session, null, 2)}</pre>-->
 </main>
 
 <style>

@@ -10,6 +10,7 @@
 	{:else if page === 'auth'}
 		<a href="/">Home</a>
 		<a href="/signout">Signout</a>
+        <a href="/signin">Signin</a>
 	{:else if page === 'todo'}
         <div class='a-todo-div'>
 		    <a href="/signout" class="a-todo-signout">Signout</a>
