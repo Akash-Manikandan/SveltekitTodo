@@ -1,4 +1,8 @@
+<div class="body-container">
+    <slot />
+</div>
 
 
-
-<slot />
+<style>
+    
+</style>

@@ -44,24 +44,24 @@
 		})
 		.subscribe();
 </script>
-
+<div class="header">
+    <Header {page} />
+</div>
 <div class="gettodo">
 	<Gettodo />
 </div>
 <div class="to-do">
 	<Addtodo />
 </div>
-<div class="header">
-    <Header {page} />
-</div>
+
 <!--<pre>{JSON.stringify($session, null, 2)}</pre>-->
 <style>
-	
+	.header{
+		padding: 0;
+		margin: 0;
+	}
     .gettodo{
         padding: 20px;
-    }
-    .header{
-       padding: 10px; 
     }
 	
 </style>

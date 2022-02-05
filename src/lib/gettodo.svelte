@@ -28,7 +28,7 @@
 		</label>
 	</div>
 	<div class="add-todo">
-		<button on:click={addTasks}>Add</button>
+		<button on:click|preventDefault={addTasks}>Add</button>
 	</div>
 </div>
 
@@ -38,6 +38,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		padding: 10px;
 	}
 	.get-todo {
 		flex: 1;
@@ -49,5 +50,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	input {
+		font: inherit;
+		padding: 6px 18px;
+	}
+	button{
+		padding: 6px;
 	}
 </style>

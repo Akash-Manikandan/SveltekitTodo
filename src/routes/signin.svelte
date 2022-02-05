@@ -27,12 +27,44 @@
 
 <main>
 	<Header {page} />
-	<br />
-	<div>
-		Enter mail-id :
-		<input type="email" bind:value={mail} /><br /><br />
-		Enter password :
-		<input type="password" bind:value={pass} /><br /><br />
-		<button on:click={connect}>Submit</button>
+	<div class="form">
+		<center>
+			<h1>SignIn</h1>
+			<table>
+				<tr>
+					<td>Enter mail-id :</td>
+					<td><input type="email" bind:value={mail} /></td>
+				</tr>
+				<tr>
+					<td>Enter password :</td>
+					<td><input type="password" bind:value={pass} /></td>
+				</tr>
+				<tr>
+					<td><button on:click|preventDefault={connect}>Submit</button></td>
+				</tr>
+			</table>
+			<small>*New user SignUp</small>
+		</center>
 	</div>
 </main>
+
+<style>
+	input {
+		font: inherit;
+		padding: 5px 12px;
+	}
+	.form {
+		color: #000;
+		padding: 20px;
+	}
+	table,
+	tr,
+	td {
+		border: 0px solid black;
+		padding: 10px;
+		border-collapse: collapse;
+	}
+	small {
+		color: red;
+	}
+</style>

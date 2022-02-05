@@ -8,14 +8,8 @@
 			.update({ done: doneMark })
 			.eq('id', primeId);
 	}
-	async function markunDone(primeId, doneMark) {
-		const { data, error } = await supabase
-			.from('tasks')
-			.update({ done: doneMark })
-			.eq('id', primeId);
-	}
 	async function removeTodo(primeId) {
-		const { data, error } = await supabase.from('tasks').update({ remove: true }).eq('id', primeId);
+		const { data, error } = await supabase.from('tasks').delete().eq('id', primeId);
 		if (error) console.log(error);
 	}
 </script>
@@ -31,10 +25,10 @@
 						<input
 							type="checkbox"
 							bind:checked={item.done}
-							on:change={() => markDone(item.id, item.done)}
+							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
 						{item.task_added}
-						<button class="remove-todo" on:click={() => removeTodo(item.id)}>x</button>
+						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}>x</button>
 					</label>
 				</div>
 			{/if}
@@ -50,10 +44,10 @@
 						<input
 							type="checkbox"
 							bind:checked={item.done}
-							on:change={() => markunDone(item.id, item.done)}
+							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
 						{item.task_added}
-						<button class="remove-todo" on:click={() => removeTodo(item.id)}>x</button>
+						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}>x</button>
 					</label>
 				</div>
 			{/if}
@@ -85,14 +79,14 @@
 		padding: 25px;
 	}
 	.list1 {
-		padding: 10px;
+		padding: 20px;
 		display: block;
 		background-color: azure;
 		width: 200px;
 	}
 	.list2 {
 		display: block;
-		padding: 12px;
+		padding: 20px;
 		width: 200px;
 		background-color: azure;
 	}

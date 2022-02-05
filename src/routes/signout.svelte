@@ -13,7 +13,7 @@
 <Header {page} />
 <div>
     <h2>Are you sure to signout?</h2>
-    <button on:click={()=>($session===null)?goto('/auth'):goto('/todo')}>No</button>
-    <button on:click={logOut}>Yes</button>
+    <button on:click|preventDefault={()=>($session===null)?goto('/auth'):goto('/todo')}>No</button>
+    <button on:click|preventDefault={logOut}>Yes</button>
 </div>
 </div>
