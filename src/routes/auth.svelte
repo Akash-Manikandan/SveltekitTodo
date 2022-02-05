@@ -19,7 +19,7 @@
 				password: pass
 			},
 			{
-				redirectTo: 'https://sveltekit-todo.vercel.app/todo'
+				redirectTo: 'https://sveltekit-todo.vercel.app/todo/'
 			}
 		);
 		if (error) alert(error.message);
