@@ -15,14 +15,16 @@
 		});
 	}
 	const page = 'todo';
-	let noneExist='';
+	let noneExist = '';
 	onMount(async () => {
 		let { data, error } = await supabase.from('tasks').select('*');
 		$todos = [...data];
 		if (error) console.log(error.message);
 	});
 	$: if ($todos.length === 0) {
-		noneExist='No todos';
+		noneExist = 'No todos';
+	} else {
+		noneExist = '';
 	}
 	const tasks = supabase
 		.from('tasks')
@@ -45,17 +47,21 @@
 			}
 		})
 		.subscribe();
-		onDestroy(supabase.removeSubscription(tasks));		
+	onDestroy(() => {
+		supabase.removeSubscription(tasks);
+	});
 </script>
 
 <div class="header">
 	<Header {page} />
 </div>
-<div>
-	<p>{noneExist}</p>
-</div>
 <div class="gettodo">
 	<Gettodo />
+</div>
+<div>
+	<center>
+		<p>{noneExist}</p>
+	</center>
 </div>
 <div class="to-do">
 	<Addtodo />
