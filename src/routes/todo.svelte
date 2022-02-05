@@ -1,7 +1,7 @@
 <script>
 	import { session } from '$app/stores';
 	import { browser } from '$app/env';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { todos } from '$lib/stores';
 	import { supabase } from '$lib/supabaseClient';
 	import Header from '$lib/Header.svelte';
@@ -15,13 +15,15 @@
 		});
 	}
 	const page = 'todo';
-	let noneExist;
+	let noneExist='';
 	onMount(async () => {
 		let { data, error } = await supabase.from('tasks').select('*');
 		$todos = [...data];
 		if (error) console.log(error.message);
 	});
-
+	$: if ($todos.length === 0) {
+		noneExist='No todos';
+	}
 	const tasks = supabase
 		.from('tasks')
 		.on('INSERT', (payload) => {
@@ -43,13 +45,14 @@
 			}
 		})
 		.subscribe();
+		onDestroy(supabase.removeSubscription(tasks));		
 </script>
 
 <div class="header">
 	<Header {page} />
 </div>
 <div>
-	<p>{($todos.length===0)?'No todo exist':''}</p>
+	<p>{noneExist}</p>
 </div>
 <div class="gettodo">
 	<Gettodo />
