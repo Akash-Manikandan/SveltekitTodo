@@ -24,7 +24,6 @@
 		);
 		if (error) alert(error.message);
 		else {
-			$session = sesh;
 			goto('/confirm');
 		}
 	}
