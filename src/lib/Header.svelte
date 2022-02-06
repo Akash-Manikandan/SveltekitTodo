@@ -23,7 +23,7 @@
 	</nav>
 </div>
 
-<style>
+<style lang="scss">
 	.header {
 		background-color: #151413;
 		padding: 10px;
@@ -32,6 +32,10 @@
 	.div-header {
 		color: azure;
 		flex: 4;
+
+		p{
+			color: #24b47e;
+		}	
 	}
 	.div-header p {
 		padding: 10px;

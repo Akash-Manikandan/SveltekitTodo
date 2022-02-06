@@ -3,17 +3,25 @@
 	import { goto } from '$app/navigation';
 	import Header from '$lib/Header.svelte';
 	import { supabase } from '$lib/supabaseClient';
-    import {session} from '$app/stores';
+	import { session } from '$app/stores';
 	async function logOut() {
 		const { error } = await supabase.auth.signOut();
-		goto('/');
+		if (error) alert(error.message);
+		else {
+			goto('/');
+		}
 	}
 </script>
+
 <div>
-<Header {page} />
-<div>
-    <h2>Are you sure to signout?</h2>
-    <button on:click|preventDefault={()=>($session===null)?goto('/auth'):goto('/todo')}>No</button>
-    <button on:click|preventDefault={logOut}>Yes</button>
-</div>
+	<Header {page} />
+	<div>
+		<center>
+			<h2>Are you sure to signout?</h2>
+			<button on:click|preventDefault={() => ($session === null ? goto('/auth') : goto('/todo'))}
+				>No</button
+			>
+			<button on:click|preventDefault={logOut}>Yes</button>
+		</center>
+	</div>
 </div>

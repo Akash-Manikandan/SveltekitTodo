@@ -18,7 +18,11 @@
 	let noneExist = '';
 	onMount(async () => {
 		let { data, error } = await supabase.from('tasks').select('*');
+		if(data.length === 0){
+			data = [{done: false,task_added: "Welcome"}]
+		}else{
 		$todos = [...data];
+		}
 		if (error) console.log(error.message);
 	});
 	$: if ($todos.length === 0) {
@@ -68,7 +72,7 @@
 </div>
 
 <!--<pre>{JSON.stringify($session, null, 2)}</pre>-->
-<style>
+<style lang="scss">
 	.header {
 		padding: 0;
 		margin: 0;

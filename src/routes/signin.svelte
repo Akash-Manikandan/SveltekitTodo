@@ -48,7 +48,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	input {
 		font: inherit;
 		padding: 5px 12px;

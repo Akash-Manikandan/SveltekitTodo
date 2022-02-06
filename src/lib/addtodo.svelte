@@ -55,7 +55,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	.todo-done {
 		display: flex;
 		justify-content: space-evenly;

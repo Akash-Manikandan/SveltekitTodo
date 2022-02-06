@@ -32,7 +32,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.get-todo {
 		display: inline-flex;
 		flex-direction: column;
