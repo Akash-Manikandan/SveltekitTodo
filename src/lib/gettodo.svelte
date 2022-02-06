@@ -12,11 +12,10 @@
 					user_id: $session.user.id
 				});
 				if (error) throw error;
+				enteredValue = '';
 			} catch (error) {
 				console.log(error.message);
-			} finally {
-				enteredValue = '';
-			}
+			} 
 		}
 	}
 </script>

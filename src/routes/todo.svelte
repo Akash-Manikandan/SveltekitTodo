@@ -17,12 +17,9 @@
 	const page = 'todo';
 	let noneExist = '';
 	onMount(async () => {
+		console.log('Mounted');
 		let { data, error } = await supabase.from('tasks').select('*');
-		if(data.length === 0){
-			data = [{done: false,task_added: "Welcome"}]
-		}else{
 		$todos = [...data];
-		}
 		if (error) console.log(error.message);
 	});
 	$: if ($todos.length === 0) {
