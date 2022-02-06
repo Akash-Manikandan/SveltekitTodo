@@ -14,26 +14,6 @@
 			$session = sesh;
 		});
 	}
-	const page = 'todo';
-	let noneExist = '';
-	onMount(async () => {
-		if (browser) {
-			$session = supabase.auth.session();
-
-			supabase.auth.onAuthStateChange((event, sesh) => {
-				$session = sesh;
-			});
-		}
-		console.log('Mounted');
-		let { data, error } = await supabase.from('tasks').select('*');
-		$todos = [...data];
-		if (error) console.log(error.message);
-	});
-	$: if ($todos.length === 0) {
-		noneExist = 'No todos';
-	} else {
-		noneExist = '';
-	}
 	const tasks = supabase
 		.from('tasks')
 		.on('INSERT', (payload) => {
@@ -58,6 +38,19 @@
 	onDestroy(() => {
 		supabase.removeSubscription(tasks);
 	});
+	const page = 'todo';
+	let noneExist = '';
+	onMount(async () => {
+		console.log('Mounted');
+		let { data, error } = await supabase.from('tasks').select('*');
+		$todos = [...data];
+		if (error) console.log(error.message);
+	});
+	$: if ($todos.length === 0) {
+		noneExist = 'No todos';
+	} else {
+		noneExist = '';
+	}
 </script>
 
 <div class="header">
