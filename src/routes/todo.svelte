@@ -17,6 +17,13 @@
 	const page = 'todo';
 	let noneExist = '';
 	onMount(async () => {
+		if (browser) {
+			$session = supabase.auth.session();
+
+			supabase.auth.onAuthStateChange((event, sesh) => {
+				$session = sesh;
+			});
+		}
 		console.log('Mounted');
 		let { data, error } = await supabase.from('tasks').select('*');
 		$todos = [...data];
@@ -68,7 +75,8 @@
 	<Addtodo />
 </div>
 
-<!--<pre>{JSON.stringify($session, null, 2)}</pre>-->
+<pre>{JSON.stringify($session, null, 2)}</pre>
+
 <style lang="scss">
 	.header {
 		padding: 0;
