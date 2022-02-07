@@ -1,6 +1,6 @@
 <script>
 	export let page;
-	let src = '../../static/todo.gif';
+	let src = 'todo.gif';
 </script>
 
 <div class="header">
