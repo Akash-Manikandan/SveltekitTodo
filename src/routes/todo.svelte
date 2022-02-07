@@ -68,7 +68,7 @@
 	<Addtodo />
 </div>
 
-<pre>{JSON.stringify($session, null, 2)}</pre>
+<!--<pre>{JSON.stringify($session, null, 2)}</pre>-->
 
 <style lang="scss">
 	.header {

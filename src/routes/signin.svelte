@@ -27,35 +27,47 @@
 
 <main>
 	<Header {page} />
-	<div class="form">
-		<center>
-			<h1>SignIn</h1>
-			<table>
-				<tr>
-					<td>Enter mail-id :</td>
-					<td><input type="email" bind:value={mail} /></td>
-				</tr>
-				<tr>
-					<td>Enter password :</td>
-					<td><input type="password" bind:value={pass} /></td>
-				</tr>
-				<tr>
-					<td><button on:click|preventDefault={connect}>Submit</button></td>
-				</tr>
-			</table>
-			<small>*New user SignUp</small>
-		</center>
+	<div class="container">
+		<div class="card">
+			<center>
+				<h1>SignIn</h1>
+				<table>
+					<tr>
+						<td>Enter mail-id :</td>
+						<td><input type="email" bind:value={mail} /></td>
+					</tr>
+					<tr>
+						<td>Enter password :</td>
+						<td><input type="password" bind:value={pass} /></td>
+					</tr>
+					<tr>
+						<td><button on:click|preventDefault={connect}>Submit</button></td>
+					</tr>
+				</table>
+				<small>*New user SignUp</small>
+			</center>
+		</div>
 	</div>
 </main>
 
 <style lang="scss">
+	.container {
+		min-height: 90vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #eee;
+	}
+	.container .card {
+		height: 280px;
+		width: 500px;
+		background-color: #fff;
+		position: relative;
+		box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+	}
 	input {
 		font: inherit;
 		padding: 5px 12px;
-	}
-	.form {
-		color: #000;
-		padding: 20px;
 	}
 	table,
 	tr,

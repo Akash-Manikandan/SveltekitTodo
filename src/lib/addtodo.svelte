@@ -7,6 +7,7 @@
 			.from('tasks')
 			.update({ done: doneMark })
 			.eq('id', primeId);
+		if (error) console.log(error);
 	}
 	async function removeTodo(primeId) {
 		const { data, error } = await supabase.from('tasks').delete().eq('id', primeId);
@@ -28,7 +29,9 @@
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
 						{item.task_added}
-						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}>x</button>
+						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
+							>x</button
+						>
 					</label>
 				</div>
 			{/if}
@@ -47,7 +50,9 @@
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
 						{item.task_added}
-						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}>x</button>
+						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
+							>x</button
+						>
 					</label>
 				</div>
 			{/if}
