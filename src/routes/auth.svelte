@@ -82,6 +82,11 @@
 		padding: 10px;
 		border-collapse: collapse;
 	}
+	@media only screen and (max-width: 600px) {
+		table{
+			margin-right: 5px;
+		}
+	}
 	small {
 		color: red;
 	}
@@ -133,7 +138,8 @@
 		position: relative;
 		transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 		border-radius: 16px;
-		overflow: hidden;
+		overflow-x: scroll;
+		overflow-y: hidden;
 		box-shadow: 15px 15px 27px grey, -15px -15px 27px grey;
 	}
 	.property-image {
