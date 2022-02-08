@@ -126,12 +126,12 @@
 			overflow: hidden;
 			min-height: 95vh;
 			.card{
-				width: 300px;
+				width: 310px;
 				height: 300px;
 			}
 		}
 		input{
-			padding: 5px 8px;
+			padding: 5px;
 		}
 	}
 </style>
