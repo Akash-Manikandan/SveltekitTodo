@@ -45,30 +45,28 @@
 								<td colspan="2"
 									><center
 										><div class="but-div">
-											<button on:click|preventDefault={connect}>Submit</button>
+											<button on:click|preventDefault={connect} class="glow-on-hover">Signin</button>
 										</div></center
 									></td
 								>
 							</tr>
 						</table>
-						<small>*New user SignUp</small>
+						<small>*New user ? SignUp</small>
 					</center>
 				</div>
-			</div>
-			<div class="property-description">
-				<h5>SignIn</h5>
 			</div>
 		</div>
 	</div>
 </main>
 
 <style lang="scss">
-	table,
+		table,
 	tr,
 	td {
 		border: 0px solid black;
 		padding: 10px;
 		border-collapse: collapse;
+		color: #fff;
 	}
 	small {
 		color: red;
@@ -77,33 +75,9 @@
 	.but-div {
 		padding: 10px;
 	}
-	button {
-		width: 50px;
-		height: 25px;
-		cursor: pointer;
-		font-size: 12px;
-		color: #fff;
-		background: #24b47e;
-		border: 1px solid black;
-		box-shadow: 3px 3px 0 black, -3px -3px 0 black, -3px 3px 0 black, 3px -3px 0 black;
-		transition: 500ms ease-in-out;
-	}
 
-	button:hover {
-		box-shadow: 20px 3px 0 black, -20px -3px 0 black;
-	}
-
-	button:focus {
-		outline: none;
-	}
 	* {
 		box-sizing: border-box;
-	}
-
-	h5 {
-		margin: 0px;
-		font-size: 1.4em;
-		font-weight: 700;
 	}
 	.center {
 		height: 90vh;
@@ -111,7 +85,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: grey;
+		background-color: #1e1e1e;
 	}
 	.property-card {
 		height: 15em;
@@ -123,7 +97,11 @@
 		border-radius: 16px;
 		overflow-x: hidden;
 		overflow-y: hidden;
-		box-shadow: 15px 15px 27px grey, -15px -15px 27px grey;
+		box-shadow: 2px 2px 5px #24b47e, -2px -2px 5px #24b47e;
+	}
+	.property-card:hover{
+		animation: rainbow 5s infinite;
+		border: 0px;
 	}
 	.property-image {
 		height: 30em;
@@ -131,37 +109,111 @@
 		padding: 1em 2em;
 		position: absolute;
 		top: 0px;
-		transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-		background-image: linear-gradient(rgba(240, 0, 200, 0.6), rgba(245, 240, 100, 0.6));
-		background-size: cover;
-		background-repeat: no-repeat;
+		background-color: #222121;
 	}
-	.property-description {
-		background-color: #fafafc;
-		height: 10em;
-		width: 20em;
+	.glow-on-hover {
+		width: 80px;
+		height: 40px;
+		border: none;
+		outline: none;
+		color: #fff;
+		background: #111;
+		cursor: pointer;
+		position: relative;
+		z-index: 0;
+		border-radius: 10px;
+	}
+
+	.glow-on-hover:before {
+		content: '';
+		background: linear-gradient(
+			45deg,
+			#ff0000,
+			#ff7300,
+			#fffb00,
+			#48ff00,
+			#00ffd5,
+			#002bff,
+			#7a00ff,
+			#ff00c8,
+			#ff0000
+		);
 		position: absolute;
-		bottom: 0em;
-		transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-		padding: 0.5em 1em;
-		text-align: center;
+		top: -2px;
+		left: -2px;
+		background-size: 400%;
+		z-index: -1;
+		filter: blur(5px);
+		width: calc(100% + 4px);
+		height: calc(100% + 4px);
+		animation: glowing 20s linear infinite;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+		border-radius: 10px;
 	}
-	.property-card:hover {
-		box-shadow: 15px 15px 27px #121212, -15px -15px 27px grey;
+
+	.glow-on-hover:active {
+		color: #000;
 	}
-	.property-card:hover .property-description {
-		height: 0em;
-		padding: 0px 1em;
+
+	.glow-on-hover:active:after {
+		background: transparent;
 	}
-	.property-card:hover .property-image {
-		height: 15em;
+
+	.glow-on-hover:hover:before {
+		opacity: 1;
 	}
-	@media only screen and (max-width: 600px) {
+
+	.glow-on-hover:after {
+		z-index: -1;
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #111;
+		left: 0;
+		top: 0;
+		border-radius: 10px;
+	}
+
+	@keyframes glowing {
+		0% {
+			background-position: 0 0;
+		}
+		50% {
+			background-position: 400% 0;
+		}
+		100% {
+			background-position: 0 0;
+		}
+	}
+	@keyframes rainbow {
+		from,
+		to {
+			box-shadow: 0 0 25px 0 red;
+		}
+		16% {
+			box-shadow: 0 0 25px 0 yellow;
+		}
+		32% {
+			box-shadow: 0 0 25px 0 green;
+		}
+		48% {
+			box-shadow: 0 0 25px 0 aqua;
+		}
+		64% {
+			box-shadow: 0 0 25px 0 blue;
+		}
+		80% {
+			box-shadow: 0 0 25px 0 fuchsia;
+		}
+	}
+
+	@media only screen and (max-width: 400px) {
 		.property-card {
 			overflow-y: hidden;
 			overflow-x: scroll;
 		}
-		.property-description,
 		.property-image {
 			width: 22em;
 		}
