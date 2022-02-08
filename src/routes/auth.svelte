@@ -53,7 +53,13 @@
 						<td><input type="password" bind:value={pass} /></td>
 					</tr>
 					<tr>
-						<td colspan="2"><center><div class='but-div'><button on:click|preventDefault={connect}>Submit</button></div></center></td>
+						<td colspan="2"
+							><center
+								><div class="but-div">
+									<button on:click|preventDefault={connect}>Submit</button>
+								</div></center
+							></td
+						>
 					</tr>
 				</table>
 				<small>*Already an user? SignIn</small>
@@ -93,7 +99,7 @@
 	small {
 		color: red;
 	}
-	.but-div{
+	.but-div {
 		padding: 10px;
 	}
 	button {
@@ -114,5 +120,18 @@
 
 	button:focus {
 		outline: none;
+	}
+	@media (max-width: 700px) {
+		.container {
+			overflow: hidden;
+			min-height: 95vh;
+			.card{
+				width: 300px;
+				height: 300px;
+			}
+		}
+		input{
+			padding: 5px 8px;
+		}
 	}
 </style>

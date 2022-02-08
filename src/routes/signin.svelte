@@ -37,7 +37,7 @@
 						<td><input type="email" bind:value={mail} /></td>
 					</tr>
 					<tr>
-						<td>Enter password :</td>
+						<td>Enter password:</td>
 						<td><input type="password" bind:value={pass} /></td>
 					</tr>
 					<tr>
@@ -101,5 +101,18 @@
 
 	button:focus {
 		outline: none;
+	}
+	@media (max-width: 700px) {
+		.container {
+			overflow: hidden;
+			min-height: 95vh;
+			.card{
+				width: 300px;
+				height: 300px;
+			}
+		}
+		input{
+			padding: 5px 7px;
+		}
 	}
 </style>

@@ -9,7 +9,7 @@
 		<span>Todo</span>
 	</div>
 	<div class="div-nav">
-		<nav>
+		<nav class="nav">
 			{#if page === 'home'}
 				<a href="/">Home</a>
 				<a href="/auth">Signup</a>
@@ -67,6 +67,27 @@
 			}
 			a:link {
 				color: #fff;
+			}
+		}
+	}
+	@media (max-width: 700px) {
+		.header {
+			overflow: hidden;
+			padding: 8px;
+			font-size: small;
+			.div-header {
+				margin-left: 5px;
+				span {
+					padding: 3px 3px 3px 5px;
+				}
+			}
+			.div-nav {
+				padding: 8px;
+				overflow: scroll;
+				a {
+					padding: 5px;
+					margin-left: 10px;
+				}
 			}
 		}
 	}
