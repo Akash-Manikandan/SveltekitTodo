@@ -82,13 +82,9 @@
 		padding: 10px;
 		border-collapse: collapse;
 	}
-	@media only screen and (max-width: 600px) {
-		table{
-			margin-right: 5px;
-		}
-	}
 	small {
-		color: red;
+		color: #24b47e;
+		font-weight: bold;
 	}
 	.but-div {
 		padding: 10px;
@@ -138,7 +134,7 @@
 		position: relative;
 		transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 		border-radius: 16px;
-		overflow-x: scroll;
+		overflow-x: hidden;
 		overflow-y: hidden;
 		box-shadow: 15px 15px 27px grey, -15px -15px 27px grey;
 	}
@@ -172,5 +168,15 @@
 	}
 	.property-card:hover .property-image {
 		height: 15em;
+	}
+	@media only screen and (max-width: 600px) {
+		.property-card {
+			overflow-y: hidden;
+			overflow-x: scroll;
+		}
+		.property-description,
+		.property-image {
+			width: 22em;
+		}
 	}
 </style>
