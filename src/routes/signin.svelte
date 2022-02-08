@@ -112,7 +112,8 @@
 			}
 		}
 		input{
-			padding: 5px;
+			size: 10;
+			padding: 1px 1px 1px 1px;
 		}
 	}
 </style>
