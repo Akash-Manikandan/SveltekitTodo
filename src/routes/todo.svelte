@@ -35,13 +35,9 @@
 			}
 		})
 		.subscribe();
-	onDestroy(() => {
-		supabase.removeSubscription(tasks);
-	});
 	const page = 'todo';
 	let noneExist = '';
 	onMount(async () => {
-		console.log('Mounted');
 		let { data, error } = await supabase.from('tasks').select('*');
 		$todos = [...data];
 		if (error) console.log(error.message);
@@ -51,6 +47,9 @@
 	} else {
 		noneExist = '';
 	}
+	onDestroy(() => {
+		supabase.removeSubscription(tasks);
+	});
 </script>
 
 <div class="header">

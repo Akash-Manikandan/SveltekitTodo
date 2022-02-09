@@ -67,6 +67,8 @@
 		padding: 10px;
 		border-collapse: collapse;
 		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
 	}
 	small {
 		color: red;

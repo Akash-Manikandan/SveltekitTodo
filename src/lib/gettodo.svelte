@@ -38,6 +38,8 @@
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
 	}
 	.get-todo {
 		flex: 1;

@@ -19,7 +19,7 @@
 				password: pass
 			},
 			{
-				redirectTo: 'https://sveltekit-todo.vercel.app/todo/'
+				redirectTo: 'https://sveltekit-todo.vercel.app/signin/'
 			}
 		);
 		if (error) alert(error.message);
@@ -80,6 +80,8 @@
 		padding: 10px;
 		border-collapse: collapse;
 		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
 	}
 	small {
 		color: red;
@@ -88,7 +90,6 @@
 	.but-div {
 		padding: 10px;
 	}
-
 	* {
 		box-sizing: border-box;
 	}

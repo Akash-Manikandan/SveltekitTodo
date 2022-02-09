@@ -11,5 +11,9 @@
 
 
 <style>
-
+	p{
+		padding: 10px;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
+	}
 </style>

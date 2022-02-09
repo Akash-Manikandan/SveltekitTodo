@@ -4,11 +4,20 @@
 	import Header from '$lib/Header.svelte';
 	import { supabase } from '$lib/supabaseClient';
 	import { session } from '$app/stores';
+	let sesh = JSON.stringify($session, null, 2);
 	async function logOut() {
 		const { error } = await supabase.auth.signOut();
 		if (error) alert(error.message);
 		else {
 			goto('/');
+		}
+	}
+	function noLogout(){
+		if(sesh.length===2 || sesh.length===4){
+			goto('/auth');
+		}
+		else{
+			goto('/todo');
 		}
 	}
 </script>
@@ -20,11 +29,13 @@
 			<center>
 				<div class="card">
 					<h2>Are you sure to signout?</h2>
-					<button
-						on:click|preventDefault={() => ($session === null ? goto('/auth') : goto('/todo'))}
-						>No</button
-					>
-					<button on:click|preventDefault={logOut}>Yes</button>
+					<div class="but">
+						<button
+							on:click|preventDefault={noLogout}
+							>No</button
+						>
+						<button on:click|preventDefault={logOut}>Yes</button>
+					</div>
 				</div>
 			</center>
 		</div>
@@ -38,6 +49,8 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #eee;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
 	}
 	.container .card {
 		height: 120px;
@@ -46,5 +59,14 @@
 		position: relative;
 		box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 		padding-top: 10px;
+	}
+	.but{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 8px;
+	}
+	button{
+		padding:8px 12px 8px 12px;
 	}
 </style>

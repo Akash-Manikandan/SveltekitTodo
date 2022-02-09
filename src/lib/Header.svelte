@@ -33,6 +33,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 15px;
 		padding: 10px;
 		.div-header {
 			color: #fff;

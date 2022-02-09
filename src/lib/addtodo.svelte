@@ -64,6 +64,8 @@
 	.todo-done {
 		display: flex;
 		justify-content: space-evenly;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
 	}
 	.todo {
 		flex: 1;
