@@ -38,7 +38,6 @@
 
 <main class="auth">
 	<Header {page} />
-
 	<div class="center">
 		<div class="property-card">
 			<div class="property-image">
@@ -109,11 +108,11 @@
 		position: relative;
 		transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 		border-radius: 16px;
-		overflow-x: hidden;
+		overflow-x: auto;
 		overflow-y: hidden;
 		box-shadow: 2px 2px 5px #24b47e, -2px -2px 5px #24b47e;
 	}
-	.property-card:hover{
+	.property-card:hover {
 		animation: rainbow 5s infinite;
 		border: 0px;
 	}

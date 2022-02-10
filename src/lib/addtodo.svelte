@@ -22,7 +22,7 @@
 			{#if !item.done && !item.remove}
 				<br />
 				<div class="list1">
-					<label in:fly={{ y: -20 }} out:fly={{ x: -20 }} class="list">
+					<label in:fly={{ y: -40 }} out:fly={{ x: -40 }} class="list">
 						<input
 							type="checkbox"
 							bind:checked={item.done}
@@ -43,7 +43,7 @@
 			{#if item.done && !item.remove}
 				<br />
 				<div class="list2">
-					<label in:fly={{ x: -20 }} out:fly={{ y: 20 }} class="list">
+					<label in:fly={{ x: -40 }} out:fly={{ y: 40 }} class="list">
 						<input
 							type="checkbox"
 							bind:checked={item.done}

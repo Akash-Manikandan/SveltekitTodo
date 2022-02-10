@@ -7,9 +7,10 @@
 	import Header from '$lib/Header.svelte';
 	import Gettodo from '$lib/gettodo.svelte';
 	import Addtodo from '$lib/addtodo.svelte';
+	let user;
 	if (browser) {
 		$session = supabase.auth.session();
-
+		user = $session.user.id;
 		supabase.auth.onAuthStateChange((event, sesh) => {
 			$session = sesh;
 		});
@@ -55,6 +56,9 @@
 <div class="header">
 	<Header {page} />
 </div>
+<div class="user-div">
+	<p>user-id : <span>{user}</span></p>
+</div>
 <div class="gettodo">
 	<Gettodo />
 </div>
@@ -68,8 +72,17 @@
 </div>
 
 <!--<pre>{JSON.stringify($session, null, 2)}</pre>-->
-
 <style lang="scss">
+	.user-div {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
+		text-align: right;
+		padding: 8px;
+		font-size: smaller;
+		span {
+			color: #24b47e;
+		}
+	}
 	.header {
 		padding: 0;
 		margin: 0;

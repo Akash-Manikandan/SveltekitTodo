@@ -15,7 +15,7 @@
 				enteredValue = '';
 			} catch (error) {
 				console.log(error.message);
-			} 
+			}
 		}
 	}
 </script>
@@ -23,7 +23,7 @@
 <div class="get-add">
 	<div class="get-todo">
 		<label>
-			<input bind:value={enteredValue} />
+			<input placeholder="Enter todo" bind:value={enteredValue} />
 		</label>
 	</div>
 	<div class="add-todo">
@@ -37,7 +37,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 10px;
+		padding: 8px;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 14px;
 	}
@@ -56,7 +56,7 @@
 		font: inherit;
 		padding: 6px 18px;
 	}
-	button{
+	button {
 		padding: 6px;
 	}
 </style>
