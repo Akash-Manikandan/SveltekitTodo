@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import { supabase } from "./supabaseClient";
+
 
 //export const session = writable({});
 

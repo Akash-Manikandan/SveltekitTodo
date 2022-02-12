@@ -1,5 +1,5 @@
 <script>
-	import { fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { todos } from './stores';
 	import { supabase } from './supabaseClient';
 	async function markDone(primeId, doneMark) {
@@ -22,13 +22,17 @@
 			{#if !item.done && !item.remove}
 				<br />
 				<div class="list1">
-					<label in:fly={{ y: -40 }} out:fly={{ x: -40 }} class="list">
+					<label
+						in:fade={{ x: -20, duration: 1000 }}
+						out:fade={{ x: -20, duration: 1000 }}
+						class="list"
+					>
 						<input
 							type="checkbox"
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						{item.task_added}
+						<span>{item.task_added}</span>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>
@@ -43,13 +47,17 @@
 			{#if item.done && !item.remove}
 				<br />
 				<div class="list2">
-					<label in:fly={{ x: -40 }} out:fly={{ y: 40 }} class="list">
+					<label
+						in:fade={{ x: -20, duration: 1000 }}
+						out:fade={{ x: 20, duration: 1000 }}
+						class="list"
+					>
 						<input
 							type="checkbox"
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						{item.task_added}
+						<strike>{item.task_added}</strike>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>

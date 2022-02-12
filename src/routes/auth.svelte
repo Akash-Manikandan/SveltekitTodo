@@ -63,7 +63,7 @@
 								>
 							</tr>
 						</table>
-						<small>*Already an user ? SignIn</small>
+						<small>*Already an user ? <a href="/signin">SignIn</a></small>
 					</center>
 				</div>
 			</div>
@@ -85,6 +85,10 @@
 	small {
 		color: red;
 		font-weight: bold;
+		a {
+			color: red;
+			text-decoration: none;
+		}
 	}
 	.but-div {
 		padding: 10px;

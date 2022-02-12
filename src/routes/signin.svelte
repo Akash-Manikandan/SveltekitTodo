@@ -45,13 +45,14 @@
 								<td colspan="2"
 									><center
 										><div class="but-div">
-											<button on:click|preventDefault={connect} class="glow-on-hover">SignIn</button>
+											<button on:click|preventDefault={connect} class="glow-on-hover">SignIn</button
+											>
 										</div></center
 									></td
 								>
 							</tr>
 						</table>
-						<small>*New user ? SignUp</small>
+						<small>*New user ? <a href="/auth">SignUp</a></small>
 					</center>
 				</div>
 			</div>
@@ -60,7 +61,7 @@
 </main>
 
 <style lang="scss">
-		table,
+	table,
 	tr,
 	td {
 		border: 0px solid black;
@@ -73,6 +74,10 @@
 	small {
 		color: red;
 		font-weight: bold;
+		a {
+			color: red;
+			text-decoration: none;
+		}
 	}
 	.but-div {
 		padding: 10px;
@@ -101,7 +106,7 @@
 		overflow-y: hidden;
 		box-shadow: 2px 2px 5px #24b47e, -2px -2px 5px #24b47e;
 	}
-	.property-card:hover{
+	.property-card:hover {
 		animation: rainbow 5s infinite;
 		border: 0px;
 	}

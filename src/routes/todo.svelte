@@ -90,4 +90,10 @@
 	.gettodo {
 		padding: 20px;
 	}
+	@media only screen and (max-width: 400px) {
+		.user-div{
+			font-size: 10px;
+			padding: 2px;
+		}
+	}
 </style>
