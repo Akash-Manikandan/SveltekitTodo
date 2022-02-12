@@ -57,7 +57,7 @@
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						<strike>{item.task_added}</strike>
+						<strike><i>{item.task_added}</i></strike>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>
