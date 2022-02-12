@@ -45,7 +45,7 @@
 								<td colspan="2"
 									><center
 										><div class="but-div">
-											<button on:click|preventDefault={connect} class="glow-on-hover">Signin</button>
+											<button on:click|preventDefault={connect} class="glow-on-hover">SignIn</button>
 										</div></center
 									></td
 								>

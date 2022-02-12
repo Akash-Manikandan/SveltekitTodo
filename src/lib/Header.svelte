@@ -12,16 +12,16 @@
 		<nav class="nav">
 			{#if page === 'home'}
 				<a href="/">Home</a>
-				<a href="/auth">Signup</a>
-				<a href="/signin">Signin</a>
+				<a href="/auth">SignUp</a>
+				<a href="/signin">SignIn</a>
 			{:else if page === 'auth'}
 				<a href="/">Home</a>
-				<a href="/signin">Signin</a>
+				<a href="/signin">SignIn</a>
 			{:else if page === 'todo'}
-				<a href="/signout">Signout</a>
+				<a href="/signout">SignOut</a>
 			{:else if page === 'signin'}
 				<a href="/">Home</a>
-				<a href="/auth">Signup</a>
+				<a href="/auth">SignUp</a>
 			{/if}
 		</nav>
 	</div>
