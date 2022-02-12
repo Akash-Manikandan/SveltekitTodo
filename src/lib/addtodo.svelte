@@ -23,8 +23,8 @@
 				<br />
 				<div class="list1">
 					<label
-						in:fade={{ x: -20, duration: 1000 }}
-						out:fade={{ x: -20, duration: 1000 }}
+						in:fade={{ x: -20, duration: 500 }}
+						out:fade={{ x: -20, duration: 500 }}
 						class="list"
 					>
 						<input
@@ -48,8 +48,8 @@
 				<br />
 				<div class="list2">
 					<label
-						in:fade={{ x: -20, duration: 1000 }}
-						out:fade={{ x: 20, duration: 1000 }}
+						in:fade={{ x: -20, duration: 500 }}
+						out:fade={{ x: 20, duration: 500 }}
 						class="list"
 					>
 						<input
