@@ -32,7 +32,7 @@
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						<span>{item.task_added}</span>
+						<span title={"Created at :  "+item.updated_at}>{item.task_added}</span>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>
@@ -57,7 +57,7 @@
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						<strike><i>{item.task_added}</i></strike>
+						<strike><i title={"Created at :  "+item.updated_at}>{item.task_added}</i></strike>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>
