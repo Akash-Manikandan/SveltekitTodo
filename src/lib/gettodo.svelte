@@ -3,6 +3,7 @@
 	import { session } from '$app/stores';
 	let enteredValue = '';
 	async function addTasks() {
+		enteredValue = enteredValue.trim();
 		if (enteredValue) {
 			try {
 				const { data, error } = await supabase.from('tasks').insert({
