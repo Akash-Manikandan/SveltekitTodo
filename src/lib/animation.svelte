@@ -3,7 +3,7 @@
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 	.animation {
-		padding-top: 30px;
+		padding: 30px;
 		background: 50% 100% / 50% 50% no-repeat
 			radial-gradient(ellipse at bottom, #fff, transparent, transparent);
 		-webkit-background-clip: text;
