@@ -1,6 +1,7 @@
 <script>
 	import Header from '$lib/Header.svelte';
 	import Animation from '$lib/animation.svelte';
+	import Card from '$lib/card.svelte';
 	const page = 'home';
 </script>
 
@@ -12,7 +13,11 @@
 		<div>
 			<Animation />
 		</div>
-		<div />
+		<div style="background-color: #222121;">
+			<center>
+				<Card />
+			</center>
+		</div>
 	</div>
 </div>
 
