@@ -3,11 +3,8 @@
 		<div class="box">
 			<div class="content">
 				<h2>01</h2>
-				<h3>Card One</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo
-					labore inventore?
-				</p>
+				<h3>Manage Time</h3>
+				<p>Organised Arrangement of Todo which helps in managing time efficiently</p>
 				<a href="/">Read More</a>
 			</div>
 		</div>
@@ -17,11 +14,8 @@
 		<div class="box">
 			<div class="content">
 				<h2>02</h2>
-				<h3>Card Two</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo
-					labore inventore?
-				</p>
+				<h3>Easy to Access</h3>
+				<p>Easy and secure to access with auth protection and sync on all devices</p>
 				<a href="/">Read More</a>
 			</div>
 		</div>
@@ -31,11 +25,8 @@
 		<div class="box">
 			<div class="content">
 				<h2>03</h2>
-				<h3>Card Three</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo
-					labore inventore?
-				</p>
+				<h3>Open source</h3>
+				<p>Opensource and guaranteed support, service and protection</p>
 				<a href="/">Read More</a>
 			</div>
 		</div>
@@ -50,7 +41,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 		max-width: 1200px;
-		margin: 40px 0;
+		margin: 0;
 	}
 
 	body .container .card {
@@ -113,9 +104,9 @@
 	body .container .card .box .content h2 {
 		position: absolute;
 		top: -10px;
-		right: 30px;
+		right: 75px;
 		font-size: 8rem;
-		color: rgba(255, 255, 255, 0.1);
+		color: rgba(223, 109, 109, 0.1);
 	}
 
 	body .container .card .box .content h3 {

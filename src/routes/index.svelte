@@ -18,6 +18,9 @@
 				<Card />
 			</center>
 		</div>
+		<div class="footer">
+			<small>© Akash</small>
+		</div>
 	</div>
 </div>
 
@@ -27,5 +30,14 @@
 		height: 100vh;
 		width: 100%;
 		color: #fff;
+	}
+	.footer {
+		padding: 30px;
+		background-color: #222121;
+	}
+	@media (max-width: 300px) {
+		* {
+			overflow-x: hidden;
+		}
 	}
 </style>
