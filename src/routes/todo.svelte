@@ -7,8 +7,12 @@
 	import Header from '$lib/Header.svelte';
 	import Gettodo from '$lib/gettodo.svelte';
 	import Addtodo from '$lib/addtodo.svelte';
+
+	import JSConfetti from 'js-confetti';
+	let confetti;
 	let user;
 	if (browser) {
+		confetti = new JSConfetti();
 		$session = supabase.auth.session();
 		user = $session.user.id;
 		supabase.auth.onAuthStateChange((event, sesh) => {
@@ -41,7 +45,10 @@
 	onMount(async () => {
 		let { data, error } = await supabase.from('tasks').select('*');
 		$todos = [...data];
-		if (error) console.log(error.message);
+		if (error) console.log(error.message)
+		else{
+			confetti.addConfetti();
+		}
 	});
 	$: if ($todos.length === 0) {
 		noneExist = 'No todos';
@@ -65,7 +72,7 @@
 		<p style="color: #fff;">{noneExist}</p>
 	</center>
 </div>
-	
+
 <div class="to-do">
 	<Addtodo />
 </div>
@@ -93,7 +100,7 @@
 		background-color: #222121;
 	}
 	@media only screen and (max-width: 400px) {
-		.user-div{
+		.user-div {
 			font-size: 10px;
 			padding: 2px;
 		}
