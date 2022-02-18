@@ -19,7 +19,7 @@
 			</center>
 		</div>
 		<div class="footer">
-			<small>© Akash</small>
+			<small>©All rights reserved</small>
 		</div>
 	</div>
 </div>

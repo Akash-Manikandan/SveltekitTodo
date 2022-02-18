@@ -16,7 +16,7 @@
 				<h2>02</h2>
 				<h3>Easy to Access</h3>
 				<p>Easy and secure to access with auth protection and sync on all devices</p>
-				<a href="/">Read More</a>
+				<a href="/auth">Sign Up</a>
 			</div>
 		</div>
 	</div>
@@ -27,7 +27,7 @@
 				<h2>03</h2>
 				<h3>Open source</h3>
 				<p>Opensource and guaranteed support, service and protection</p>
-				<a href="/">Read More</a>
+				<a href="/signin">Sign In</a>
 			</div>
 		</div>
 	</div>

@@ -34,9 +34,7 @@
 
 <style lang="scss">
 	.get-todo {
-		display: inline-flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		padding: 8px;
 		font-family: 'Open Sans', sans-serif;

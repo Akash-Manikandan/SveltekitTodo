@@ -61,12 +61,11 @@
 </div>
 <div class="gettodo">
 	<Gettodo />
-</div>
-<div>
 	<center>
-		<p>{noneExist}</p>
+		<p style="color: #fff;">{noneExist}</p>
 	</center>
 </div>
+	
 <div class="to-do">
 	<Addtodo />
 </div>
@@ -79,6 +78,8 @@
 		text-align: right;
 		padding: 8px;
 		font-size: smaller;
+		background-color: #222121;
+		color: #fff;
 		span {
 			color: #24b47e;
 		}
@@ -89,6 +90,7 @@
 	}
 	.gettodo {
 		padding: 20px;
+		background-color: #222121;
 	}
 	@media only screen and (max-width: 400px) {
 		.user-div{

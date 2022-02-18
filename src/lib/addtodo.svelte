@@ -21,6 +21,7 @@
 		{#each $todos as item}
 			{#if !item.done && !item.remove}
 				<br />
+				<br />
 				<div class="list1">
 					<label
 						in:fade={{ x: -20, duration: 500 }}
@@ -46,7 +47,8 @@
 		{#each $todos as item}
 			{#if item.done && !item.remove}
 				<br />
-				<div class="list2">
+				<br />
+				<div class="list1">
 					<label
 						in:fade={{ x: -20, duration: 500 }}
 						out:fade={{ x: 20, duration: 500 }}
@@ -74,6 +76,10 @@
 		justify-content: space-evenly;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 14px;
+		color: white;
+		box-sizing: border-box;
+		border-top: 2px solid #24b47e;
+		border-bottom: 2px solid #24b47e;
 	}
 	.todo {
 		flex: 1;
@@ -81,8 +87,13 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: aqua;
+		background-color: #222121;
 		padding: 25px;
+		box-sizing: border-box;
+		border-right: 2px solid #24b47e;
+		h3{
+			color: red;
+		}
 	}
 	.done {
 		flex: 1;
@@ -90,20 +101,22 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: lightcoral;
+		background-color: #222121;
 		padding: 25px;
+		box-sizing: border-box;
+		border-left: 2px solid #24b47e;
+		h3{
+			color: blue;
+		}
 	}
 	.list1 {
 		padding: 20px;
 		display: block;
-		background-color: azure;
-		width: 200px;
-	}
-	.list2 {
-		display: block;
-		padding: 20px;
-		width: 200px;
-		background-color: azure;
+		background-color: 222121;
+		width: 250px;
+		box-sizing: border-box;
+		border-radius: 10px;
+		border: 1px solid #24b47e;
 	}
 	.list {
 		padding: 5px;
@@ -114,9 +127,12 @@
 		box-sizing: border-box;
 		padding: 0 0.5em;
 		line-height: 1;
+		display: block;
+		height: 20px;
+		font-size: larger;
 		background-color: transparent;
 		border: none;
-		color: rgb(170, 30, 30);
+		color: rgb(190, 30, 30);
 		opacity: 0;
 		transition: opacity 0.2s;
 	}
@@ -124,12 +140,45 @@
 		opacity: 1;
 		cursor: pointer;
 	}
+	.list1:hover {
+		animation: rainbow 5s infinite;
+	}
+	@keyframes rainbow {
+		from,
+		to {
+			box-shadow: 0 0 25px 0 red;
+		}
+		16% {
+			box-shadow: 0 0 25px 0 yellow;
+		}
+		32% {
+			box-shadow: 0 0 25px 0 green;
+		}
+		48% {
+			box-shadow: 0 0 25px 0 aqua;
+		}
+		64% {
+			box-shadow: 0 0 25px 0 blue;
+		}
+		80% {
+			box-shadow: 0 0 25px 0 fuchsia;
+		}
+	}
 	@media (max-width: 700px) {
 		.todo-done {
 			flex-direction: column;
 		}
 		label .remove-todo {
 			opacity: 1;
+		}
+		.todo{
+			border: 0px;
+		}
+		.done{
+			border-top: 2px solid #24b47e;
+		}
+		.list1{
+			animation: rainbow 5s infinite;
 		}
 	}
 </style>
