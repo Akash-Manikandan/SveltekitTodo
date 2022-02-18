@@ -19,7 +19,9 @@
 			</center>
 		</div>
 		<div class="footer">
-			<small>©All rights reserved</small>
+			<small>
+				Copyright © 2022 Akash, All rights reserved.
+			</small>
 		</div>
 	</div>
 </div>
