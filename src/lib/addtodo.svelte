@@ -175,6 +175,7 @@
 			border: 0px;
 		}
 		.done{
+			border-left: 0px;
 			border-top: 2px solid #24b47e;
 		}
 		.list1{
