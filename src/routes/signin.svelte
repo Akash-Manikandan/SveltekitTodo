@@ -94,8 +94,8 @@
 		background-color: #1e1e1e;
 	}
 	.property-card {
-		height: 15em;
-		width: 20em;
+		height: 16em;
+		width: 21em;
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -211,6 +211,8 @@
 		.property-card {
 			overflow-y: hidden;
 			overflow-x: scroll;
+			height: 17em;
+			width: 21em;
 		}
 	}
 </style>
