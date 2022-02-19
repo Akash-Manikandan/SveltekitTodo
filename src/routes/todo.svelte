@@ -8,11 +8,8 @@
 	import Gettodo from '$lib/gettodo.svelte';
 	import Addtodo from '$lib/addtodo.svelte';
 
-	import JSConfetti from 'js-confetti';
-	let confetti;
 	let user;
 	if (browser) {
-		confetti = new JSConfetti();
 		$session = supabase.auth.session();
 		user = $session.user.id;
 		supabase.auth.onAuthStateChange((event, sesh) => {
