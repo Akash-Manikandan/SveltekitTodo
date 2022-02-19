@@ -43,9 +43,6 @@
 		let { data, error } = await supabase.from('tasks').select('*');
 		$todos = [...data];
 		if (error) console.log(error.message)
-		else{
-			confetti.addConfetti();
-		}
 	});
 	$: if ($todos.length === 0) {
 		noneExist = 'No todos';
