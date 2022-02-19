@@ -33,7 +33,7 @@
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						<span title={"Created at :  "+item.updated_at}>{item.task_added}</span>
+						<span title={'Created at :  ' + item.updated_at}>{item.task_added}</span>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>
@@ -59,7 +59,7 @@
 							bind:checked={item.done}
 							on:change|preventDefault={() => markDone(item.id, item.done)}
 						/>
-						<strike><i title={"Created at :  "+item.updated_at}>{item.task_added}</i></strike>
+						<strike><i title={'Created at :  ' + item.updated_at}>{item.task_added}</i></strike>
 						<button class="remove-todo" on:click|preventDefault={() => removeTodo(item.id)}
 							>x</button
 						>
@@ -91,7 +91,7 @@
 		padding: 25px;
 		box-sizing: border-box;
 		border-right: 2px solid #24b47e;
-		h3{
+		h3 {
 			color: red;
 		}
 	}
@@ -105,7 +105,7 @@
 		padding: 25px;
 		box-sizing: border-box;
 		border-left: 2px solid #24b47e;
-		h3{
+		h3 {
 			color: blue;
 		}
 	}
@@ -164,6 +164,27 @@
 			box-shadow: 0 0 25px 0 fuchsia;
 		}
 	}
+	@keyframes rainbow-mob {
+		from,
+		to {
+			box-shadow: 0 0 20px 0 rgba(256, 256, 256, 0.6);
+		}
+		16% {
+			box-shadow: 0 0 20px 0 rgba(256, 256, 256, 0.7);
+		}
+		32% {
+			box-shadow: 0 0 20px 0 rgba(256, 256, 256, 0.1);
+		}
+		48% {
+			box-shadow: 0 0 20px 0 rgba(256, 256, 256, 0.2);
+		}
+		64% {
+			box-shadow: 0 0 20px 0 rgba(256, 256, 256, 0.4);
+		}
+		80% {
+			box-shadow: 0 0 20px 0 rgba(256, 256, 256, 0.5);
+		}
+	}
 	@media (max-width: 700px) {
 		.todo-done {
 			flex-direction: column;
@@ -171,15 +192,15 @@
 		label .remove-todo {
 			opacity: 1;
 		}
-		.todo{
+		.todo {
 			border: 0px;
 		}
-		.done{
+		.done {
 			border-left: 0px;
 			border-top: 2px solid #24b47e;
 		}
-		.list1{
-			animation: rainbow 5s infinite;
+		.list1 {
+			animation: rainbow-mob 2s infinite;
 		}
 	}
 </style>
