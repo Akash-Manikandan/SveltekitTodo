@@ -29,38 +29,37 @@
 	<Header {page} />
 	<div class="center">
 		<div class="property-card">
-			<div class="property-image">
-				<div class="property-image-title">
-					<center>
-						<table>
-							<tr>
-								<td>Enter mail-id :</td>
-								<td><input type="email" bind:value={mail} /></td>
-							</tr>
-							<tr>
-								<td>Enter password:</td>
-								<td><input type="password" bind:value={pass} /></td>
-							</tr>
-							<tr>
-								<td colspan="2"
-									><center
-										><div class="but-div">
-											<button on:click|preventDefault={connect} class="glow-on-hover">SignIn</button
-											>
-										</div></center
-									></td
-								>
-							</tr>
-						</table>
-						<small>*New user ? <a href="/auth">SignUp</a></small>
-					</center>
-				</div>
-			</div>
+			<center>
+				<h3>SignIn</h3>
+				<table>
+					<tr>
+						<td>Enter mail-id :</td>
+						<td><input type="email" bind:value={mail} /></td>
+					</tr>
+					<tr>
+						<td>Enter password:</td>
+						<td><input type="password" bind:value={pass} /></td>
+					</tr>
+					<tr>
+						<td colspan="2"
+							><center
+								><div class="but-div">
+									<button on:click|preventDefault={connect} class="glow-on-hover">SignIn</button>
+								</div></center
+							></td
+						>
+					</tr>
+				</table>
+				<small>*New user ? <a href="/auth">SignUp</a></small>
+			</center>
 		</div>
 	</div>
 </main>
 
 <style lang="scss">
+	h3 {
+		color: red;
+	}
 	table,
 	tr,
 	td {
@@ -109,14 +108,6 @@
 	.property-card:hover {
 		animation: rainbow 5s infinite;
 		border: 0px;
-	}
-	.property-image {
-		height: 30em;
-		width: 20em;
-		padding: 1em 2em;
-		position: absolute;
-		top: 0px;
-		background-color: #222121;
 	}
 	.glow-on-hover {
 		width: 80px;
@@ -220,9 +211,6 @@
 		.property-card {
 			overflow-y: hidden;
 			overflow-x: scroll;
-		}
-		.property-image {
-			width: 22em;
 		}
 	}
 </style>
